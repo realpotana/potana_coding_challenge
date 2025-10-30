@@ -1,0 +1,23 @@
+[
+  {
+    "account_number": "1234567890",
+    "security_id": "ABC123",
+    "trade_type": "Buy",
+    "amount": 100000,
+    "timestamp": "2025-08-04T21:15:33"
+  },
+  {
+    "account_number": "9876543210",
+    "security_id": "XYZ789",
+    "trade_type": "Sell",
+    "amount": 50000,
+    "timestamp": "2025-08-04T21:16:00"
+  },
+  {
+    "account_number": "5555666677",
+    "security_id": "DEF456",
+    "trade_type": "Buy",
+    "amount": 75000,
+    "timestamp": "2025-08-04T21:17:15"
+  }
+]

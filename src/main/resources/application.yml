@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: instructions-capture-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: instructions-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+app:
+  kafka:
+    topics:
+      inbound: instructions.inbound
+      outbound: instructions.outbound
+  platform:
+    id: ACCT123
+
+logging:
+  level:
+    com.example.instructions: INFO
+    org.springframework.kafka: WARN
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  kafka:
+    bootstrap-servers: localhost:9093
